@@ -1,15 +1,15 @@
 [package]
 name = "luajit"
-version = "0.1.0"
-authors = ["Dreae <dreae@dreae.onl>"]
+version = "0.1.1"
+authors = ["Dreae <dreae@dreae.onl>", "boatboatboatboat <boat@cock.li>"]
 build = "build.rs"
-description = "Rust crate for calling LuaJIT from Rust"
-documentation = "https://dreae.gitlab.io/luajit-rs/luajit/"
-repository = "https://gitlab.com/Dreae/luajit-rs"
+description = "Rust crate for calling LuaJIT from Rust (fork)"
+repository = "https://gitlab.com/boatboatboatboat/luajit-rs"
 readme = "README.md"
 keywords = ["luajit", "lua"]
 category = ["external-ffi-bindings", "embedded", "api-bindings"]
 license = "MIT"
+exclude = [".idea"] # eh
 
 [dependencies]
 libc = "0.2.32"
