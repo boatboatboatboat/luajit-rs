@@ -152,6 +152,13 @@ impl State {
         }
     }
 
+    /// Gets the top of the stack (amount of things in the stack)
+    pub fn gettop(&mut self) -> i32 {
+        unsafe {
+            lua_gettop( self.state)
+        }
+    }
+
     /// Pops a value from the top of the stack
     pub fn pop(&mut self, n: i32) {
         unsafe {
