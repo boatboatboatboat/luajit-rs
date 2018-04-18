@@ -4,7 +4,7 @@ use libc::{c_int, c_void};
 use std::{mem, ptr};
 use std::path::Path;
 
-use super::types::{LuaValue, LuaFunction, LuaObject};
+use super::types::{LuaValue, LuaFunction, LuaObject, LuaType};
 
 #[derive(PartialEq, Eq, Clone, Copy, Debug)]
 pub enum ThreadStatus {
