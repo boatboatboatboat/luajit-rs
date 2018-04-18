@@ -696,6 +696,23 @@ impl State {
             lua_checkstack(self.state, n as c_int) != 0
         }
     }
+
+    pub fn gettype(&mut self, idx: i32) -> LuaType {
+        unsafe {
+            match lua_type(self.state, idx) {
+                LUA_TNIL => LuaType::Nil,
+                LUA_TBOOLEAN => LuaType::Boolean,
+                LUA_TNUMBER => LuaType::Number,
+                LUA_TFUNCTION => LuaType::Function,
+                LUA_TSTRING => LuaType::String,
+                LUA_TTABLE => LuaType::Table,
+                LUA_TUSERDATA => LuaType::Userdata,
+                LUA_TTHREAD => LuaType::Thread,
+                LUA_TLIGHTUSERDATA => LuaType::LightUserdata,
+                _ => LuaType::None
+            }
+        }
+    }
 }
 
 impl Drop for State {

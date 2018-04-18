@@ -123,3 +123,16 @@ pub trait LuaObject {
     /// be registered in the metatable automatically.
     fn lua_fns() -> Vec<ffi::luaL_Reg>;
 }
+
+pub enum LuaType {
+    None,
+    Nil,
+    Number,
+    Boolean,
+    String,
+    Table,
+    Function,
+    Userdata,
+    Thread,
+    LightUserdata
+}
