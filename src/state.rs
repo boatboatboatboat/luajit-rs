@@ -152,7 +152,8 @@ impl State {
         }
     }
 
-    /// Gets the top of the stack (amount of things in the stack)
+    /// Returns the index of the top element in the stack.
+    /// Because indices start at 1, this result is equal to the number of elements in the stack (and so 0 means an empty stack).
     pub fn gettop(&mut self) -> i32 {
         unsafe {
             lua_gettop( self.state)
